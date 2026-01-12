@@ -9,7 +9,7 @@ abstract class UserRepository {
 class UserRepositoryImpl implements UserRepository {
   @override
   Future<List<User>> getUsers() async {
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 3));
     return [
       User(id: 1, name: 'Alice'),
       User(id: 2, name: 'Bob'),
