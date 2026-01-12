@@ -1,5 +1,8 @@
+import 'package:cubit_example/controller/users/user_cubit.dart';
+import 'package:cubit_example/repository/users/user_repositores.dart';
 import 'package:cubit_example/ui/screens/user_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const UserScreen(title: 'Flutter State Management Demo'),
+    return BlocProvider(
+      create: (context) => UserCubit(UserRepositoryImpl()),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+        home: const UserScreen(title: 'Flutter State Management Demo'),
+      ),
     );
   }
 }
