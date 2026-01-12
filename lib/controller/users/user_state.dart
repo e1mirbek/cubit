@@ -7,7 +7,7 @@ class UserInitial extends UserState {}
 class UserLoading extends UserState {}
 
 class UserLoaded extends UserState {
-  final Future<List<User>> users;
+  List<User> users;
   UserLoaded({required this.users});
 }
 
