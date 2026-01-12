@@ -10,7 +10,7 @@ class UserCubit extends Cubit<UserState> {
   Future<void> loadUser() async {
     emit(UserLoading());
     try {
-      final user = userRepository.getUsers();
+      final user = await userRepository.getUsers();
       emit(UserLoaded(users: user));
     } catch (e) {
       emit(UserError(errorMessage: e.toString()));
