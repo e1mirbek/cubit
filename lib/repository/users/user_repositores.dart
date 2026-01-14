@@ -4,7 +4,7 @@ abstract class UserRepository {
   Future<List<User>> getUsers(); // метод получение списка пользователей
 }
 
-// конкретная реализация репозитория пользователей - который возврощает данные
+// передача данных
 
 class UserRepositoryImpl implements UserRepository {
   @override
